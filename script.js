@@ -28,18 +28,50 @@ const randomMessages = [
 ];
 
 $(document).ready(function () {
+  date = new Date();
+  h = date.getHours();
+  m = date.getMinutes();
+  h = h > 9 ? h : "0" + h;
+  m = m > 9 ? m : "0" + m;
+
+  li = $("<li></li>").text(
+    "Hello, you can say anything and I will give you a random response."
+  );
+  sp = $("<span></span>").text(h + ":" + m);
+  sp.addClass("time");
+  li.append(sp);
+  $("#messages").append(li);
+
   $("button").click(function (e) {
     e.preventDefault();
+
     message = $("#input").val();
     if (message != "") {
+      date = new Date();
+      h = date.getHours();
+      m = date.getMinutes();
+      h = h > 9 ? h : "0" + h;
+      m = m > 9 ? m : "0" + m;
+
       li = $("<li></li>").text(message);
+      sp = $("<span></span>").text(h + ":" + m);
+      sp.addClass("time");
+      li.append(sp);
       $("#messages").append(li);
       $("#input").val("");
 
+      date = new Date();
+      h = date.getHours();
+      m = date.getMinutes();
+      h = h > 9 ? h : "0" + h;
+      m = m > 9 ? m : "0" + m;
       randomNumber = Math.round(Math.random() * 24);
       console.log(randomNumber);
       li = $("<li></li>").text(randomMessages[randomNumber]);
+      sp = $("<span></span>").text(h + ":" + m);
+      sp.addClass("time");
       console.log(randomMessages[randomNumber]);
+      li.append(sp);
       $("#messages").append(li);
 
       //from stackoverflow https://stackoverflow.com/questions/11715646/scroll-automatically-to-the-bottom-of-the-page
