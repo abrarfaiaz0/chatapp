@@ -1,6 +1,6 @@
 :root {
-  --primary: #78c1f3;
-  --secondary: #9be8d8;
+  --primary: #6527be;
+  --secondary: #9681eb;
 }
 html {
   width: 100%;
@@ -48,23 +48,12 @@ body {
 }
 #messages > li {
   font-size: 2rem;
-  padding: 1rem 4rem;
+  padding: 1rem 2rem;
+  position: relative;
 }
 #messages > li:nth-child(odd) {
   background-color: var(--secondary);
-  position: relative;
-}
-#messages > li:nth-child(odd)::before {
-  content: "";
-  height: 2rem;
-  width: 2rem;
-  position: absolute;
-  background-image: url(images/user.png);
-  left: 1rem;
 }
 #messages > li:nth-child(even) {
   text-align: right;
-}
-#messages > li:nth-child(even):after {
-  content: "";
 }
