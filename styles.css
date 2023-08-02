@@ -3,16 +3,15 @@
   --secondary: #9681eb;
 }
 html {
-  width: 100%;
 }
 body {
   margin: 0;
-  width: 100%;
+
   padding-bottom: 4rem;
-  background-color: var(--primary);
+  background-image: url(images/bg.jpg);
+  background-size: 30%;
 }
 #form {
-  width: 100%;
   position: fixed;
   bottom: 0;
   left: 0;
@@ -23,7 +22,7 @@ body {
 #input {
   flex: 20;
   border-radius: 1rem;
-  border: none;
+  border: 1px solid black;
   font-size: 2rem;
   padding-left: 1rem;
   background-color: #fefefe;
@@ -35,26 +34,30 @@ body {
   flex: 3;
   font-size: 2rem;
   border-radius: 1rem;
-  border: none;
+  border: 1px solid black;
 }
 #send:hover {
   cursor: pointer;
 }
 #messages {
-  color: white;
+  color: black;
   display: flex;
   flex-direction: column;
   margin: 0;
   padding: 0;
 }
 #messages > li {
+  border-radius: 1.2rem;
   font-size: 2rem;
-  padding: 1rem 2rem;
+  margin: 0.5rem;
+  padding: 0.5rem 2rem;
   position: relative;
+  border: 2px solid rgb(0, 172, 0);
 }
 #messages > li:nth-child(odd) {
-  background-color: var(--secondary);
+  background-color: #fefefe;
 }
 #messages > li:nth-child(even) {
+  background-color: rgb(220, 255, 220);
   text-align: right;
 }

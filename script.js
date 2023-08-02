@@ -28,19 +28,22 @@ const randomMessages = [
 ];
 
 $(document).ready(function () {
-  $("button").click(function () {
+  $("button").click(function (e) {
+    e.preventDefault();
     message = $("#input").val();
-    li = $("<li></li>").text(message);
-    $("#messages").append(li);
-    $("#input").val("");
+    if (message != "") {
+      li = $("<li></li>").text(message);
+      $("#messages").append(li);
+      $("#input").val("");
 
-    randomNumber = Math.round(Math.random() * 24);
-    console.log(randomNumber);
-    li = $("<li></li>").text(randomMessages[randomNumber]);
-    console.log(randomMessages[randomNumber]);
-    $("#messages").append(li);
-    window.scrollTo(0, document.body.scrollHeight);
+      randomNumber = Math.round(Math.random() * 24);
+      console.log(randomNumber);
+      li = $("<li></li>").text(randomMessages[randomNumber]);
+      console.log(randomMessages[randomNumber]);
+      $("#messages").append(li);
+
+      //from stackoverflow https://stackoverflow.com/questions/11715646/scroll-automatically-to-the-bottom-of-the-page
+      window.scrollTo(0, document.body.scrollHeight);
+    }
   });
 });
-
-//from stackoverflow https://stackoverflow.com/questions/11715646/scroll-automatically-to-the-bottom-of-the-page
