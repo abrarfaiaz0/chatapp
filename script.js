@@ -39,8 +39,8 @@ $(document).ready(function () {
     li = $("<li></li>").text(randomMessages[randomNumber]);
     console.log(randomMessages[randomNumber]);
     $("#messages").append(li);
+    window.scrollTo(0, document.body.scrollHeight);
   });
 });
 
 //from stackoverflow https://stackoverflow.com/questions/11715646/scroll-automatically-to-the-bottom-of-the-page
-window.scrollTo(0, document.body.scrollHeight);

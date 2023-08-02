@@ -26,6 +26,7 @@ body {
   border: none;
   font-size: 2rem;
   padding-left: 1rem;
+  background-color: #fefefe;
 }
 #input:focus {
   border: 1px solid gray;
